@@ -10,7 +10,7 @@ scr 폴더 : 소스코드
 package.json : 프로젝트 정보 ( ex.프로젝트명 , 버전... )
 ```
 
-- ## 2강 : useState
+- ## useState
 ```javascript
 import logo from './logo.svg';
 //리액트에 있는 내장 함수를 하나 쓰겠습니다.
@@ -47,7 +47,7 @@ export default App;
 고정 값 -> 하드코딩 혹은 단순 변수로 사용하면 좋다. </br>
 
 
-- ## 4강 : Sate 활용
+- ## useSate 활용
 ```javascript
 import logo from './logo.svg';
 import React, { useState } from 'react';
@@ -84,7 +84,7 @@ function App() {
 export default App;
 ```
 
-- ## 2-1 강 : 사용자 정의 태그
+- ## 사용자 정의 태그
 
 ```javascript
 import logo from './logo.svg';
@@ -117,7 +117,7 @@ export default App;
 
 ```
 
-- ## 2-2강 : Prop
+- ## Props
 ```javascript
 import logo from './logo.svg';
 import React, { useState } from 'react';
@@ -160,7 +160,7 @@ export default App;
 
 ```
 
-- ## 2-3강 : Props 활용
+- ## Props 활용
 ```javascript
 import logo from './logo.svg';
 import React, { useState } from 'react';
