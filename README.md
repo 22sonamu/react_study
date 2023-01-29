@@ -206,3 +206,26 @@ function App() {
 }
 export default App;
 ```
+
+- ## useEffect
+1. 랜더링 될때마다 실행
+```javascript
+    useEffect(()=>{
+         //작업 
+    });
+```
+2. 컴포넌트가 맨처음 랜더링될때 , 혹은 배열의 값이 바뀔때 실행 (빈 배열일 경우 -> 맨 처음에만 랜더링)
+```javascript
+    useEffect(()=>{
+         //작업 
+    }, []);
+```
+3. return 값을 통해 정리를 해줄수있음 (ex. 사용했던 이벤트 리스너 제거)
+```javascript
+    useEffect(()=>{
+         //작업 
+         return () => {
+            //작업 정리
+         }
+    });
+```
