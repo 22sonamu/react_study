@@ -17,13 +17,6 @@ function Nav(){
   </nav>
 }
 function App() {
-
-
-  let [a,b] = useState(['남자 코트 추천', '강남 우동 맛집']);
-  //b(a[0] = '여자 코트 추천'은 불가능하다. ['여자 코트 추천' , '강남 우동 맛집'])
-  let [favorite, plusFavorite] = useState(0);
-
-
   return (  
     <div className="App">
       <Header></Header>
@@ -31,5 +24,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
