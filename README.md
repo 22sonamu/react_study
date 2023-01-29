@@ -281,3 +281,59 @@ export default App;
 
   ```
   
+  - ##### 3번 예제
+  1. ##### Timer.js
+  ```javascript
+  import React, {useEffect} from 'react';
+
+
+const Timer = (props) => {
+
+    useEffect(() => {
+        //log를 1초마다 한번씩 보낸다.
+        const timer = setInterval(() => {
+            console.log("타이머 돌아가는중....");
+        }, 1000);
+
+        //HTML 에서 언마운트 되면 타이머 돌아가던걸 정리
+        return () => {
+            clearInterval(timer);
+            console.log("타이머가 종료되었습니다.")
+        }
+    }, []);
+
+    return(
+        <div>
+            <span>타이머를 시작합니다. 콘솔을 보세요!</span>
+        </div>
+    )
+}
+
+export default Timer;
+    
+  ```
+
+  2. ##### App.js
+  ```javascript
+  import logo from './logo.svg';
+import React, { useState , useEffect } from 'react';
+import Timer from './component/Timer';
+import './App.css'; 
+
+
+function App() {
+
+  const [showTimer , setShowTimer] = useState(false);
+
+  return (  
+    <div className="App">
+      {/*이렇게 하면 showTimer가 True일때만 보인다*/}
+      {showTimer && <Timer/>}
+      {/*버튼을 누르면 showTimer의 값이 반전된다*/}
+      <button onClick ={() => setShowTimer(!showTimer)}>Toggle timer</button>
+    </div>
+  );
+}
+export default App;
+
+  ```
