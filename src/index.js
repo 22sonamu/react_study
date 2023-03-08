@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 class Square extends React.Component {
+  //클래스에 생성자 추가
+  constructor(props){
+    super(props);
+    this.state = {
+      value:null,
+    };
+  }
+
   render() {
     return (
-      <button className="square">
-        {this.props.value}
+      <button className="square" onClick={()=>{this.setState({value:'X'})}}>
+        {this.state.value}
       </button>
     );
   }
