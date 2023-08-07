@@ -1,6 +1,6 @@
 import ExpenseDate from "./ExpenseDate";
-import "./ExpenseItem.css";
-import Card from "./Card";
+import "../Expenses/ExpenseItem.css";
+import Card from "../UI/Card";
 
 function ExpenseItem({date, title, amount}) {
     const month = date.toLocaleString('ko-KR', {month : 'long'});
