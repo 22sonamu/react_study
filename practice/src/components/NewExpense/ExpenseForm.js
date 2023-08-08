@@ -10,10 +10,16 @@ const ExpenseForm = () => {
         enteredDate : ''
     });
     const titleChangeHandler = (event) => {
-       setUserInput({
-        ...userInput, //기존의 value를 오버아리드해서 덮어쓸수있다.
-        enteredTitle : event.target.value,
-       })
+    //    setUserInput({
+    //     ...userInput, //기존의 value를 오버아리드해서 덮어쓸수있다. //최신이 보장되지 않는다.
+    //     enteredTitle : event.target.value,
+    //    })
+       //리액트는 상태 업데이트를 즉시 처리하지 않고, 예약하기때문에
+       //이전값을 받아와서 상태 처리해주는것이 제일 좋다.
+       //(최신 상태 스냅샷을 업데이트 하도록 보장해 준다.)
+       setUserInput((prevState) => {
+        return {...prevState, enteredTitle : event.target.value};
+       });
     };
     const amountChangeHandler = (event) => {
         setUserInput({
