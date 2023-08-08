@@ -1,5 +1,6 @@
 
 import Expenses from "./components/Expenses/Expenses";
+import ExpensesFilter from "./components/Filter/ExpensesFilter";
 import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
 
