@@ -2,7 +2,7 @@ import keyConceptsImage from './assets/images/key-concepts.png';
 import componentsImage from './assets/images/components.png';
 import stateImage from './assets/images/state.png';
 import eventsImage from './assets/images/events.png';
-
+import Card from './components/Card';
 const concepts = [
   {
     title: 'Components',
@@ -33,21 +33,9 @@ function App() {
         <p>Selected key React concepts you should know about</p>
       </header>
       <ul id="concepts">
-        <li className="concept">
-          <img src="TODO: IMAGE" alt="TODO: TITLE" />
-          <h2>TODO: TITLE</h2>
-          <p>TODO: DESCRIPTION</p>
-        </li>
-        <li className="concept">
-          <img src="TODO: IMAGE" alt="TODO: TITLE" />
-          <h2>TODO: TITLE</h2>
-          <p>TODO: DESCRIPTION</p>
-        </li>
-        <li className="concept">
-          <img src="TODO: IMAGE" alt="TODO: TITLE" />
-          <h2>TODO: TITLE</h2>
-          <p>TODO: DESCRIPTION</p>
-        </li>
+        <Card image = {concepts[0].image} title = {concepts[0].title} des={concepts[0].description}></Card>
+        <Card image = {concepts[1].image} title = {concepts[1].title} des={concepts[1].description}></Card>
+        <Card image = {concepts[2].image} title = {concepts[2].title} des={concepts[2].description}></Card>
       </ul>
     
     </div>
