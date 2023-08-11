@@ -43,9 +43,8 @@ export default function Expense() {
     return (
         <Card className="expenses">
             <ExpensesFilter selected ={filteredYear} onChangeFilter={filterChangeHandler}></ExpensesFilter>
-            <p>Data for years {filterInfoText} is hidden</p>
-            <ExpenseItem title={expense[0].title} date={expense[0].date} amount={expense[0].amount}></ExpenseItem>
-            <ExpenseItem title={expense[1].title} date={expense[1].date} amount={expense[1].amount}></ExpenseItem>
+            {expense.map(expense => <ExpenseItem title={expense.title} amount = {expense.amount} date = {expense.date}/>)}
+            
         </Card>
     )
 }
