@@ -3,10 +3,22 @@ import "./Expenses.css";
 import Card from "../UI/Card"
 import ExpensesFilter from "../Filter/ExpensesFilter";
 import { useState } from "react";
-export default function () {
+export default function Expense() {
   const [filteredYear, setFilteredYear] = useState("2020");
-  const filterChangeHandler = (selectedYear) => {
-    setFilteredYear(selectedYear);
+  let filterInfoText = '2019, 2021 & 2022'
+
+  if(filteredYear === '2019'){
+    filterInfoText = '2020, 2021 & 2022';
+  }if(filteredYear === '2020'){ 
+    filterInfoText = '2019, 2021 & 2022';
+  }if(filteredYear === '2021'){
+    filterInfoText = '2019, 2020 & 2022';
+  }if(filteredYear ==='2022'){
+    filterInfoText = '2019, 2020 & 2021';
+  }
+  const filterChangeHandler = (filteredYear) => {
+    //이 함수가 동작하면, 컴포넌트가 재실행되면서 위의 if문이 동작한다.
+    setFilteredYear(filteredYear);
   }
     const expense = [
         {
@@ -31,7 +43,7 @@ export default function () {
     return (
         <Card className="expenses">
             <ExpensesFilter selected ={filteredYear} onChangeFilter={filterChangeHandler}></ExpensesFilter>
-            <p>Data for years 2019 , 2020 & 2022 is hidden</p>
+            <p>Data for years {filterInfoText} is hidden</p>
             <ExpenseItem title={expense[0].title} date={expense[0].date} amount={expense[0].amount}></ExpenseItem>
             <ExpenseItem title={expense[1].title} date={expense[1].date} amount={expense[1].amount}></ExpenseItem>
         </Card>
