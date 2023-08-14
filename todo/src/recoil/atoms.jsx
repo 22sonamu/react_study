@@ -9,6 +9,13 @@ export const todoList = atom({
             content : "점심 맛있게 먹기",
             isDone : false,
             due : new Date()
+        },
+        {
+            id : 2,
+            bundleId : 2,
+            content : "책 읽기",
+            isDone : false,
+            due : new Date()
         }
     ]
 });
