@@ -27,3 +27,9 @@ export const todoBundleList = atom({
         }
     ]
 });
+
+
+export const clickedBundleId = atom({
+   key : 'clickedBundleId',
+   default : 1
+})

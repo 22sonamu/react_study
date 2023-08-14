@@ -1,11 +1,12 @@
-import {selectorFamily} from 'recoil';
-import { todoBundleList } from './atoms';
-export const todoBundleSelector = selectorFamily({
-    key : 'todoBundleSelector' ,
-    get : (param) => 
+import {selector} from 'recoil';
+import { clickedBundleId, clickedTodoList , todoList} from './atoms';
+export const todoSelector = selector({
+    key : 'todoSelector' ,
+    get : 
     ({get}) => {
+        console.log(get(clickedBundleId))
         //todoBundleList Atom에서 id === param인 데이터를 return
-        get(todoBundleList).filter((todoBundle) => todoBundle["id"] === parseInt(param))
+        return get(todoList).filter((todoBundle) => todoBundle["bundleId"] === parseInt(get(clickedBundleId)))
     }
     // set: ({ set }, newBundle) => {
     //     const oldBundle = get(todoBundleList)
