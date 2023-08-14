@@ -18,8 +18,12 @@ export const todoBundleList = atom({
     key : 'todoBundleList',
     default : [
         {
-        id : 1,
-        title : "오늘의 할일"
+            id : 1,
+            title : "오늘의 할일"
+        },
+        {
+            id : 2,
+            title : "어제의 할일"
         }
     ]
 });
