@@ -1,16 +1,20 @@
-import Todos from "../data/Todos";
-import { useState } from "react";
+
+import { useRecoilState, useRecoilValue } from "recoil";
+import { todoBundleList } from "../recoil/atoms";
+import TodoBundle from "./TodoBundle";
 const Main = () => {
-    const [todos ,setTodos] = useState(Todos);
-    todos.push(
-        {
-            id : 3,
-            content : "hello",
-            isDone : false
-        }
-    )
+    const [todoBundleListAtom, setTodoBundleListAtom] = useRecoilState(todoBundleList);
+    
+    // setTodoBundleListAtom(
+    //     (prev) => {
+    //         return [...prev, {id : 1 , title : "new"}]
+    //     }
+    // )
+    console.log(todoBundleListAtom);
     return (
-        <div></div>
+        <>
+            <TodoBundle></TodoBundle>
+        </>
     );
 }
 
