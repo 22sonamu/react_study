@@ -4,7 +4,7 @@ export const todoList = atom({
     key : 'todoList',
     default : [
         {
-            todoId : 1,
+            id : 1,
             bundleId : 1,
             content : "점심 맛있게 먹기",
             isDone : false,

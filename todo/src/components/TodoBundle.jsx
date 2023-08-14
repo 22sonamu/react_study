@@ -3,6 +3,7 @@ import { useRecoilValue  } from "recoil";
 import { todoBundleList } from "../recoil/atoms";
 
 const TodoBundle = () => {
+    //투두 리스트 받아오기
     const bundleList = useRecoilValue(todoBundleList)
     return (
         <ul>
