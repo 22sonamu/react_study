@@ -16,6 +16,13 @@ export const todoList = atom({
             content : "책 읽기",
             isDone : false,
             due : new Date()
+        },
+        {
+            id : 3,
+            bundleId : 2,
+            content : "코딩 하기",
+            isDone : true,
+            due : new Date()
         }
     ]
 });
