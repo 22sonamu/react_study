@@ -18,8 +18,9 @@ const TodoLists = () => {
                     todos[i].isDone = true;
                 }
             }
-            return [todos]
+            return todos
         })
+        console.log("todo delete :" + todoId + " 삭제")
     }
     return (
         <ul>

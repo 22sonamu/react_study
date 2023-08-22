@@ -9,7 +9,6 @@ const TodoInput = () => {
     const clickedBundleIdValue = useRecoilValue(clickedBundleId)
     const newContentSubmitHandler = () => {
         if(newContent !== ""){
-            console.log(todoListState);
             setTodoListState(
                 (prev) => {
                     return [
@@ -24,6 +23,7 @@ const TodoInput = () => {
                     ]
                 }
             )
+            console.log("new todo 추가 :" + todoListState);
         }else{
             alert("내용을 입력해주세요")
         }
