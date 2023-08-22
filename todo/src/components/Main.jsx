@@ -2,6 +2,7 @@
 import TodoBundle from "./TodoBundle";
 import TodoLists from "./TodoLists";
 import TodoInput from "./TodoInput";
+import TodoBundlePlus from "./TodoBundlePlus";
 const Main = () => {
     
     return (
@@ -9,6 +10,7 @@ const Main = () => {
             <TodoBundle></TodoBundle>
             <TodoInput></TodoInput>
             <TodoLists></TodoLists>
+            <TodoBundlePlus></TodoBundlePlus>
         </>
     );
 }
