@@ -9,6 +9,7 @@ const TodoInput = () => {
     const clickedBundleIdValue = useRecoilValue(clickedBundleId)
     const newContentSubmitHandler = () => {
         if(newContent !== ""){
+            console.log(todoListState);
             setTodoListState(
                 (prev) => {
                     return [

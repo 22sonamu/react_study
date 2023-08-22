@@ -2,19 +2,8 @@ import { useRecoilValue , useRecoilState} from "recoil";
 import { todoSelector, doneTodoSelector} from "../recoil/selectors";
 import { useEffect } from "react";
 import { todoList } from "../recoil/atoms";
+import deepCopy from "../util/deepCopy";
 const TodoLists = () => {
-
-    const deepCopy = function (obj) {
-        var result = {};
-        if (typeof obj === 'object' && obj !== null) {
-          for (var prop in obj) {
-            result[obj] = deepCopy(obj[prop]);
-          }
-        } else {
-          result = obj;
-        }
-        return result;
-      };
 
     //click된 투두에 따른 Todo Bundle의 Todo List 받아오기
     const clickedTodoList = useRecoilValue(todoSelector)
