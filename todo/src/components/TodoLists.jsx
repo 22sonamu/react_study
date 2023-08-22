@@ -1,26 +1,43 @@
 import { useRecoilValue , useRecoilState} from "recoil";
-import { todoSelector, TodoList} from "../recoil/selectors";
+import { todoSelector, doneTodoSelector} from "../recoil/selectors";
 import { useEffect } from "react";
 import { todoList } from "../recoil/atoms";
 const TodoLists = () => {
+
+    const deepCopy = function (obj) {
+        var result = {};
+        if (typeof obj === 'object' && obj !== null) {
+          for (var prop in obj) {
+            result[obj] = deepCopy(obj[prop]);
+          }
+        } else {
+          result = obj;
+        }
+        return result;
+      };
+
     //click된 투두에 따른 Todo Bundle의 Todo List 받아오기
     const clickedTodoList = useRecoilValue(todoSelector)
-    const [todoListState, setTodoListState] = useRecoilState(todoList)
+    const [newTodos, setTodos] = useRecoilState(todoList);
+    //삭제 처리된 애들 
     const updateDoneTodo = (todoId) => {
-        // setTodoListState(
-        //     (prev) => {
-        //         //id로 찾아서 done 처리
-        //         prev.filter((todo) => todo.id === todoId).isDone = true
-        //         return [...prev]
-        //     }
-        // )
+        setTodos((prevTodos) => { 
+            let i;
+            var todos = deepCopy(prevTodos)
+            for (i = 0 ; i < todos.length ;i ++){
+                if(todos[i].id == todoId){
+                    todos[i].isDone = true;
+                }
+            }
+            return [todos]
+        })
     }
     return (
         <ul>
             {clickedTodoList.map((todo) => 
             (   
                 <li key={todo.id}>{todo.content}
-                    <input type="radio" onClick={updateDoneTodo(todo.id)}/>
+                    <input type="radio" onChange={()=>{updateDoneTodo(todo.id)}}/>
                 </li>
             ))}
         </ul>

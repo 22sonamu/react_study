@@ -9,7 +9,6 @@ const TodoBundle = () => {
     //Bundle 이름을 선택하면 click된 todo state 변경
     const onBundleClickHandler = (clickedId) => {
         setClickedBundleIdState(clickedId)
-        
     }
     return (
         <ul>
