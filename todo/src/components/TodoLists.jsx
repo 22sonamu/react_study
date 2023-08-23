@@ -3,6 +3,7 @@ import { todoSelector, doneTodoSelector} from "../recoil/selectors";
 import { useEffect } from "react";
 import { todoList } from "../recoil/atoms";
 import deepCopy from "../util/deepCopy";
+import TodoDeleteButton from "./TodoDeleteButton";
 const TodoLists = () => {
 
     //click된 투두에 따른 Todo Bundle의 Todo List 받아오기
@@ -31,6 +32,7 @@ const TodoLists = () => {
                     <del>{todo.content}</del> : <>{todo.content}</>
                 }
                     <input type="radio" onChange={()=>{updateDoneTodo(todo.id)}}/>
+                    <TodoDeleteButton deleteId={todo.id}></TodoDeleteButton>
                 </li>
             ))}
         </ul>
