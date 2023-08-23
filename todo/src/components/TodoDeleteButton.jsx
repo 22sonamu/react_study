@@ -2,6 +2,7 @@ import { todoList } from "../recoil/atoms";
 import { useRecoilState } from "recoil";
 import deepCopy from "../util/deepCopy";
 const TodoDeleteButton = ({deleteId}) => {
+    //todo List 삭제 기능
     const [todoListState, setTodoListState] = useRecoilState(todoList)
     const deleteClickEventHandler = () => {
         setTodoListState(

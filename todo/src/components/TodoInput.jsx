@@ -31,6 +31,7 @@ const TodoInput = () => {
 
     return (
         <>
+            <>할 일 추가 : </>
             <input onChange={(event) => {newContent = event.target.value}}></input>
             <button onClick={() => {newContentSubmitHandler()}}>제출</button>
         </>

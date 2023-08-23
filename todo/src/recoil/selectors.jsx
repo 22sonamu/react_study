@@ -1,5 +1,5 @@
 import {selector, selectorFamily} from 'recoil';
-import { clickedBundleId, todoList} from './atoms';
+import { clickedBundleId, todoList, todoBundleList} from './atoms';
 export const todoSelector = selector({
     key : 'todoSelector' ,
     get : 
@@ -31,3 +31,16 @@ export const doneTodoSelector = selectorFamily({
     }
 }
 );
+
+
+export const clickedTodoBundleTitleSelector = selector(
+    {
+        key : 'clickedTodoBundleTitleSelector',
+        get : 
+            ({get}) => {
+                //clickedBundleId에 해당하는 title return
+                const clickedBundleTitle = get(todoBundleList).filter((bundle) => bundle.id === get(clickedBundleId))[0].title
+                return clickedBundleTitle
+            }
+    }
+)

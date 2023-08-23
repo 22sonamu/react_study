@@ -1,5 +1,5 @@
 import { useRecoilValue , useRecoilState} from "recoil";
-import { todoSelector, doneTodoSelector} from "../recoil/selectors";
+import { todoSelector, doneTodoSelector, clickedTodoBundleTitleSelector } from "../recoil/selectors";
 import { useEffect } from "react";
 import { todoList } from "../recoil/atoms";
 import deepCopy from "../util/deepCopy";
@@ -9,6 +9,7 @@ const TodoLists = () => {
     //click된 투두에 따른 Todo Bundle의 Todo List 받아오기
     const clickedTodoList = useRecoilValue(todoSelector)
     const [newTodos, setTodos] = useRecoilState(todoList);
+    const clickedTodoBundleTitle = useRecoilValue(clickedTodoBundleTitleSelector);
     //삭제 처리된 애들 
     const updateDoneTodo = (todoId) => {
         setTodos((prevTodos) => { 
@@ -25,6 +26,7 @@ const TodoLists = () => {
     }
     return (
         <ul>
+            <>{">>>>>" + clickedTodoBundleTitle + "<<<<<<"}</>
             {clickedTodoList.map((todo) => 
             (   
                 <li key={todo.id}>{

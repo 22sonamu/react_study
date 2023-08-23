@@ -1,6 +1,7 @@
 import "./TodoBundle.css"
 import { useRecoilValue  , useRecoilState} from "recoil";
 import { todoBundleList, clickedBundleId } from "../recoil/atoms";
+import TodoBundleDeleteButton from "./TodoBundleDeleteButton";
 
 const TodoBundle = () => {
     //투두 리스트 받아오기
@@ -12,9 +13,13 @@ const TodoBundle = () => {
     }
     return (
         <ul>
-            {bundleList.map((bundle) => (
-                <li onClick={() => {onBundleClickHandler(bundle.id)}} key={bundle.id}>{bundle.title}</li>
-            ))}
+                {bundleList.map((bundle) => (
+                    <>
+                        <li onClick={() => {onBundleClickHandler(bundle.id)}} key={bundle.id}>{bundle.title} 
+                        <TodoBundleDeleteButton bundleId={bundle.id}></TodoBundleDeleteButton></li>
+                        
+                    </>
+                ))}
         </ul>
     )
 }

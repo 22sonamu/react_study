@@ -25,6 +25,7 @@ const TodoBundlePlus = () => {
     }
     
     return <>
+        <>할일 목록 추가 : </>
         <input onChange={(event) => {newContent = event.target.value}}></input>
         <button onClick={() => {newContentSubmitHandler()}}>+</button>
     </>

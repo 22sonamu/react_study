@@ -7,10 +7,10 @@ const Main = () => {
     
     return (
         <>
+            <TodoBundlePlus></TodoBundlePlus>
             <TodoBundle></TodoBundle>
             <TodoInput></TodoInput>
             <TodoLists></TodoLists>
-            <TodoBundlePlus></TodoBundlePlus>
         </>
     );
 }
