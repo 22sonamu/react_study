@@ -8,7 +8,8 @@ const TodoLists = () => {
 
     //click된 투두에 따른 Todo Bundle의 Todo List 받아오기
     const clickedTodoList = useRecoilValue(todoSelector)
-    const [newTodos, setTodos] = useRecoilState(todoList);
+    const [newTodos, setTodos] = useRecoilState(todoList);\
+    //할일 목록 이름 표시 위함
     const clickedTodoBundleTitle = useRecoilValue(clickedTodoBundleTitleSelector);
     //삭제 처리된 애들 
     const updateDoneTodo = (todoId) => {

@@ -17,7 +17,6 @@ const TodoBundle = () => {
                     <>
                         <li onClick={() => {onBundleClickHandler(bundle.id)}} key={bundle.id}>{bundle.title} 
                         <TodoBundleDeleteButton bundleId={bundle.id}></TodoBundleDeleteButton></li>
-                        
                     </>
                 ))}
         </ul>
