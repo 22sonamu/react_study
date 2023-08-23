@@ -47,7 +47,11 @@ export const clickedTodoBundleTitleSelector = selector(
         get : 
             ({get}) => {
                 //clickedBundleId에 해당하는 title return
-                const clickedBundleTitle = get(todoBundleList).filter((bundle) => bundle.id === get(clickedBundleId))[0].title
+                let clickedBundleTitle = ''
+                const clickedBundle = get(todoBundleList).filter((bundle) => bundle.id === get(clickedBundleId))
+                if(clickedBundle !== null && clickedBundle != 'undefined' && clickedBundle.length !== 0){
+                    clickedBundleTitle = clickedBundle[0].title
+                }
                 return clickedBundleTitle
             }
     }
