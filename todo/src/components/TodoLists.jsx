@@ -20,13 +20,16 @@ const TodoLists = () => {
             }
             return todos
         })
-        console.log("todo delete :" + todoId + " 삭제")
+        console.log("todo update : id " + todoId + " Done")
     }
     return (
         <ul>
             {clickedTodoList.map((todo) => 
             (   
-                <li key={todo.id}>{todo.content}
+                <li key={todo.id}>{
+                    todo.isDone === true ?
+                    <del>{todo.content}</del> : <>{todo.content}</>
+                }
                     <input type="radio" onChange={()=>{updateDoneTodo(todo.id)}}/>
                 </li>
             ))}

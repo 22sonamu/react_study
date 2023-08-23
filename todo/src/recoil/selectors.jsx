@@ -7,9 +7,7 @@ export const todoSelector = selector({
         console.log("clickedBundleId 변경 : " + get(clickedBundleId))
         //todoList 전역변수 에서 id === clickedBundleId 인 데이터
         let clickedList = get(todoList).filter((todo) => todo["bundleId"] === parseInt(get(clickedBundleId)))
-        //그리고, 완료하지 않은 데이터만 return
-        let noDoneList = clickedList.filter((clickedTodo) => !clickedTodo.isDone)
-        return noDoneList
+        return clickedList
     }
 }
 
