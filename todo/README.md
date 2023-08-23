@@ -7,7 +7,7 @@ React 상태 관리 라이브러리
 - Atom    
     - Recoil의 단위 데이터, 컴포넌트가 구독할 수 있는 상태의 단위
 
-        **atom.js**
+        **atoms.js**
 
 
         ```jsx
@@ -43,13 +43,22 @@ React 상태 관리 라이브러리
 
 
         **사용법**  
-            useState처럼 사용할 수 있음   
+            import 한 곳(구독한 곳) 에서 useState처럼 사용할 수 있음 
+        ```jsx
+        import {todoList} from './atoms'
+        import {useRecoilState} from 'recoil'
+        const [todoListState , setTodoListState] = useRecoilState(todoList)
+        //todoListState => 값
+        //setTodoListState => Setter
+        ```
 
 
 
 - Selector 
 
     - Atom의 값을 변환하는 함수
+
+        ex. 컴포넌트에서 완료된 todo만 구독하고 싶음
 
         **selectors.jsx**
 
@@ -81,4 +90,15 @@ React 상태 관리 라이브러리
             }
         }
         );
+        ```
+
+        **사용법**  
+            import 한 곳(구독한 곳) 에서 useState처럼 사용할 수 있음 
+        ```jsx
+        import {doneTodoSelector} from './selectors'
+        import {useRecoilValue, useSetRecoilState} from 'recoil'
+        const doneTodoSelectorState = useRecoilValue(doneTodoSelector)
+        const setDoneTodoSelectorState = useSetRecoilValue(doneTodoSelector)
+
+        setDoneTodoSelectorState(1) //id : 1인 todo를 done으로 바꾸겠다.
         ```
