@@ -17,7 +17,8 @@ const TodoLists = () => {
     }
     return (
         <ul>
-            <>{">>>>>" + clickedTodoBundleTitle + "<<<<<<"}</>
+            {/*click된 bundle title 노출, title 없을 경우(삭제된 bundle 일 경우) 공백으로 노출*/}
+            <>{clickedTodoBundleTitle === '' ? "" : ">>>>>" + clickedTodoBundleTitle + "<<<<<<"}</>
             {clickedTodoList.map((todo) => 
             (   
                 <li key={todo.id}>{
