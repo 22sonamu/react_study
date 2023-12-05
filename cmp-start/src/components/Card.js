@@ -6,4 +6,4 @@ export default function Card({image, title, des}){
         <p>{des}</p>
     </li>
   );
-}
+}w
